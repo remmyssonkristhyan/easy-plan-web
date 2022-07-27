@@ -5,13 +5,15 @@ const descriptionInput = document.querySelector('#description-input');
 const missionInput = document.querySelector('#mission-input');
 // End Form
 const saveButton = document.querySelector('#save-button');
-const nextButton = document.querySelector('#next-button');
+const nextButton = document.querySelector('#nextBtn');
 const endFormPreviousButton = document.querySelector('#end-form-previous-button');
 const planAlert = document.querySelector('#plan-alert');
 
 // Ao clicar o botão de salvar...
-saveButton.addEventListener('click', (event) => {
+nextButton.addEventListener('click', (event) => {
   event.preventDefault();
+
+  console.log('clicou!')
 
 // Pegar os valores marcados das checkbox
   let activityList= '';
@@ -29,22 +31,22 @@ saveButton.addEventListener('click', (event) => {
   }
 
 //Transformar as informações inseridas em objeto
-  generalInfoForm = {
+/*
+    generalInfoForm = {
     "activity": activityList.slice(0, -3),
     "segment": segmentList.slice(0, -3),
     "description": descriptionInput.value,
     "mission": missionInput.value
   }
+*/
+
+  console.log('Dados enviados')
 
 //Armazenar o generalInfoForm no armazenamento local
   localStorage.setItem("generalInfo",JSON.stringify(generalInfoForm));
   
-//Exibir mensagem, habilitar e desabilitar botões ao salvar
-  if (nextButton.disabled = true){
-    planAlert.innerHTML = 'Plano gerado com sucesso! Aperte o botão "Visualizar Plano" para visualizar'
-    nextButton.disabled = false;
-    endFormPreviousButton.disabled = true;
-  }
+
+
 });
 
 
