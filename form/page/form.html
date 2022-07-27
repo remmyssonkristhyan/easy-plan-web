@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyPlan</title>
+  <link rel="stylesheet" href="../../style/form.css">
+</head>
+<body>
+
+  <!-- Introduction General Info -->
+  <section class="introduction" id="introduction-general-info">
+    <h2> Informações Gerais do Negócio </h2>
+    <p> Para começarmos, vamos definir algumas informações gerais do seu negócio.</p>
+    <br>
+    <!-- Continue Button -->
+    <button class="continue-button" 
+    onclick="document.querySelector('#question1').scrollIntoView(); 
+    return false;"> Continuar </button>
+  </section>
+
+    <!-- Question 1-->
+	<form>
+    <div class="question checkbox-list" id="question1">
+		<label> Setor de Atuação: </label> <br>
+		<input type="checkbox" name="activity-input" value="Indústria"> Indústria <br>
+    <input type="checkbox" name="activity-input" value="Comércio"> Comércio <br>
+		<input type="checkbox" name="activity-input" value="Serviço"> Serviço <br>
+    <input type="checkbox" name="activity-input" value="Agronegócio"> Agronegócio <br>
+    <br>
+    <!-- Previous Button -->
+    <button class="previous-button" 
+    onclick="document.querySelector('#introduction-general-info').scrollIntoView(); 
+    return false;"> Voltar </button>
+    <!-- Continue Button -->
+    <button class="continue-button" 
+    onclick="document.querySelector('#question2').scrollIntoView(); 
+    return false;"> Continuar </button>
+    </div>
+
+    <!-- Question 2-->
+    <div class="question checkbox-list" id="question2">
+		<label> Segmento: </label> <br>
+		<input type="checkbox" name="segment-input" value="Tecnologia"> Tecnologia <br>
+    <input type="checkbox" name="segment-input" value="Moda"> Moda <br>
+		<input type="checkbox" name="segment-input" value="Construção"> Construção <br>
+    <input type="checkbox" name="segment-input" value="Artesanato"> Artesanato <br>
+    <input type="checkbox" name="segment-input" value="Outro"> Outro <br>
+    <p>mais opções em breve!</p>
+    <br>
+    <!-- Previous Button -->
+    <button class="previous-button" 
+    onclick="document.querySelector('#question1').scrollIntoView(); 
+    return false;"> Voltar </button>
+    <!-- Continue Button -->
+    <button class="continue-button" 
+    onclick="document.querySelector('#question3').scrollIntoView(); 
+    return false;"> Continuar </button>
+    </div>
+
+    <!-- Question 3-->
+    <div class="question" id="question3">
+    <label>Resumo (descrição) do negócio:</label>
+    <br>
+		<textarea cols="30" rows="5" id="description-input" maxlength="500"></textarea>
+    <br>
+    <!-- Previous Button -->
+    <button class="previous-button" 
+    onclick="document.querySelector('#question2').scrollIntoView(); 
+    return false;"> Voltar </button>
+    <!-- Continue Button -->
+    <button class="continue-button" 
+    onclick="document.querySelector('#question4').scrollIntoView(); 
+    return false;"> Continuar </button>
+    </div>
+
+    <!-- Question4 -->
+    <div class="question" id="question4">
+		<label>Qual a missão do seu negócio?</label>
+    <br>
+		<textarea cols="30" rows="5" id="mission-input" maxlength="250"></textarea>
+    <br>
+    <!-- Previous Button -->
+    <button class="previous-button" 
+    onclick="document.querySelector('#question3').scrollIntoView(); 
+    return false;"> Voltar </button>
+    <!-- Continue Button -->
+    <button class="continue-button" 
+    onclick="document.querySelector('#end-form-screen').scrollIntoView(); 
+    return false;"> Continuar </button>
+  </div>
+
+  <!-- Final form buttons -->
+  <div id="end-form-screen">
+    <!-- Previous Button -->
+    <h3>Agora apenas aperte o botão "Salvar" que iremos gerar um plano simplificado para seu negócio</h3>
+    <br>
+    <p><b>ATENÇÃO!</b> Depois apertar o botão "Salvar" não tem mais como alterar as respostas.
+      Caso queira alterar alguma resposta ainda dá tempo! Apenas aperte o botão "Voltar"</p> 
+    <br>
+    <h3 id="plan-alert"></h3>
+    <!-- Previous Button -->
+    <button class="previous-button" id="end-form-previous-button"
+    onclick="document.querySelector('#question4').scrollIntoView(); 
+    return false;"> Voltar </button>
+    <!-- Save Button -->
+    <button id="save-button"> Salvar </button>
+    <!-- Next Page Button -->
+    <button id="next-button" disabled
+    onclick="window.location.href='../../../results/page/result.html';
+    return false;"> Visualizar Plano </button>
+  </div>
+</form>
+
+  <!-- JavaScript Links -->
+  <script src="../../controllers/formIndex.js"></script>
+  <script src="../../controllers/formData.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyPlan</title>
+  <link rel="stylesheet" href="../style/result.css">
+  <script src="../library/jspdf.min.js"></script>
+  
+</head>
+<body>
+  <div class="card" id="seu-negocio-card">
+    <h2> Seu negócio </h2>
+    <p><b>Setor de atuação:</b> <span id="activity-value"> </span></p>
+    <p><b>Segmento:</b> <span id="segment-value"> </span></p>
+    <p><b>Resumo/Descrição:</b> <span id="description-value"> </span></p>
+    <p><b>Missão:</b> <span id="mission-value"> </span></p>
+  </div>
+
+  <nav id="bottom-nav">
+    <button id="pdf-button"> Download PDF </button>
+    <br>
+    <a href="../../home/page/Index.html"><button>Página Inicial</button></a>
+  </nav>
+
+
+  <script src="../controller/result.js"></script>
+  <script src="../library/generatePDF.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+*{
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+body{
+  overflow: hidden;
+  text-align: center;
+}
+
+button{
+  margin: 1%;
+}
+
+p{
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+label {
+  font-size: 2rem;
+}
+
+.introduction, .question, #end-form-screen {
+  padding-top: 2%;
+  font-size: 1.5rem;
+
+  display: block;
+  overflow: auto;
+  height: 100vh;
+}
+
