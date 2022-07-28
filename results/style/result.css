@@ -1,7 +1,26 @@
+/*BOOTSTRAP*/
+/* LAYOUT */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #0C1142;
+  color: #FFFFFF;
+}
+
+.row.content {height: 450px}
+
+footer {
+  background-color: #589CFF;
+  color: #000000;
+  padding: 15px;
+  
+}
+
+/* CUSTOM (VANILLA)*/
 *{
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 body{
@@ -10,12 +29,34 @@ body{
 }
 
 button
-{margin-top: 10px;}
+{margin: 10px;}
 
+#card-container{
+  background-image: url(./blackBoardTrailHD.png);
+  background-position: center;
+  padding-bottom: 100px;
+}
 
+#bottom-nav{
+  background-color: #0C1142;
+}
 .card{
   display: table;
   margin: 0 auto;
-  padding: 0 5%;
+  margin-top: 5%;
+  padding: 1% 2%;
   border: 1px solid black;
+  width: 50%;
+}
+
+.pink{ background-color:#F5D4E9;}
+.purple{ background-color:#D6D0F5;}
+.orange{ background-color:#F8E3D4;}
+.blue{ background-color:#BDD0EB;}
+.yellow{ background-color:#F9F4CF;}
+.green{ background-color:#B3DFB5;}
+
+
+@media screen and (max-width: 767px) {
+  .row.content {height:auto;} 
 }

@@ -9,8 +9,10 @@ let generalInfoForm = localStorage.getItem("generalInfo");
 let generalInfos = JSON.parse(generalInfoForm);
 
 //Exibir informações para o usuário
+
+/* EXAMPLE
 activityValue.innerHTML = generalInfos.activity;
 segmentValue.innerHTML = generalInfos.segment;
 descriptionValue.innerHTML = generalInfos.description;
 missionValue.innerHTML = generalInfos.mission;
-
+*/

@@ -1,30 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EasyPlan</title>
-  <link rel="stylesheet" href="../style/result.css">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
   <script src="../library/jspdf.min.js"></script>
-  
+
+  <link rel="stylesheet" href="../style/result.css">
 </head>
 <body>
-  <div class="card" id="seu-negocio-card">
-    <h2> Seu negócio </h2>
-    <p><b>Setor de atuação:</b> <span id="activity-value"> </span></p>
-    <p><b>Segmento:</b> <span id="segment-value"> </span></p>
-    <p><b>Resumo/Descrição:</b> <span id="description-value"> </span></p>
-    <p><b>Missão:</b> <span id="mission-value"> </span></p>
-  </div>
 
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand"><img src="logo.jpg" alt="logo" width="500" height="600"></a>
+      </div>
+    </div>
+  </nav>
+    
+  <div id="card-container" class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-12 text-left"> 
+
+        <section class="card yellow" id="who-are-card">
+          <h2> Sobre você </h2>
+          <p><b>Nome da Empresa:</b> <span id="company-name-value"> </span></p>
+          <p><b>Nome do Empreendedor:</b> <span id="entrepreneur-name-value"> </span></p>
+          <p><b>CPF/CNPJ:</b> <span id="document-value"> </span></p>
+          <p><b>Negócio:</b> <span id="business-description-value"> </span></p>
+          <p><b>Segmento:</b> <span id="business-segment-value"> </span></p>
+        </section>
+
+        <section class="card blue" id="market-analysis-card">
+          <h2> Análise de Mercado </h2>
+          <p><b>Consumidor:</b> <span id="customer-value"> </span></p>
+          <p><b>Concorrentes:</b> <span id="competitor-value"> </span></p>
+          <p><b>Fornecedores:</b> <span id="suppliers-value"> </span></p>
+        </section>
+
+        <section class="card green" id="marketing-plan-card">
+          <h2> Plano de Marketing </h2>
+          <p><b>Produto/Serviço:</b> <span id="product-value"> </span></p>
+          <p><b>Diferencial:</b> <span id="business-differential-value"> </span></p>
+          <p><b>Forma de divulgação:</b> <span id="main-advertising-value"> </span></p>
+          <p><b>Preço médio unitário:</b> <span id="unit-price-value"> </span></p>
+          <p><b>Previsão de vendas:</b> <span id="sales-value"> </span></p>
+        </section>
+
+        <section class="card purple" id="financial-analysis-card">
+          <h2> Análise Financeira </h2>
+          <p><b>Investimento necessário:</b> <span id="starting-capital-value"> </span></p>
+          <p><b>Custo unitário médio do produto/serviço:</b> <span id="unit-cost-value"> </span></p>
+          <p><b>Custo com colaboradores:</b> <span id="collaborator-cost-value"> </span></p>
+          <p><b>Custo com aluguéis:</b> <span id="rent-cost-value"> </span></p>
+          <p><b>Outros custos:</b> <span id="other-cost-value"> </span></p>
+        </section>
+        
+        <section class="card orange" id="results-report-card">
+          <h2> Demonstrativo de Resultados </h2>
+          <p><b>Estimativa de faturamento:</b> <span id="invoicing-value"> </span></p>
+          <p><b>Estimativa de custos:</b> <span id="costs-value"> </span></p>
+          <p><b>Resultado Operacional:</b> <span id="operational-result-value"> </span></p>
+        </section>
+
+        <section class="card pink" id="viability-indicators-card">
+          <h2> Indicadores de viabilidade </h2>
+          <p><b>Margem de contruibuição:</b> <span id="contribution-margin-value"> </span></p>
+          <p><b>Ponto de equilibrio:</b> <span id="balance-point-value"> </span></p>
+          <p><b>Lucratividade:</b> <span id="profitability-value"> </span></p>
+          <p><b>Rentabilidade:</b> <span id="return-value"> </span></p>
+          <p><b>Prazo de retorno do investimento:</b> <span id="return-period-value"> </span></p>
+        </section>
+
+        
+      </div>
+    </div>
+  </div>
+  
   <nav id="bottom-nav">
     <button id="pdf-button"> Download PDF </button>
     <br>
     <a href="../../home/page/index.html"><button>Página Inicial</button></a>
   </nav>
 
+  <footer class="container-fluid text-center">
+    <p>Footer Text</p>
+  </footer>
 
+
+  <script src="../library/html2pdf.js"></script>
   <script src="../controller/result.js"></script>
   <script src="../library/generatePDF.js"></script>
 </body>
