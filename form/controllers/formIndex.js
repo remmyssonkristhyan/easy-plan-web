@@ -1,10 +1,15 @@
-const radios = document.querySelectorAll('input')
 const needCapital = document.getElementsByName('need-capital-input');
 const howCapitalLabel = document.querySelector('#how-capital-label');
 const howCapital = document.querySelector('#how-capital-input');
+const redirectButton = document.querySelector('#redirect-button');
+
+//RedirectToResult
+redirectButton.addEventListener("click", () => {
+  window.location.href = "../../results/page/result.html";
+});
 
 //HowCapital on/off
-for (const radio of radios) {
+for (const radio of needCapital) {
   radio.onclick = (current) => {
     console.log(current.target.value)
     console.log('mudou')
@@ -39,17 +44,19 @@ function showTab(current) {
     document.getElementById("warning-message").style.display = "none";
     document.getElementById("next-button").innerHTML = "Próximo";
   }
-  fixStepIndicator(current)
+  fixStepIndicator(current);
 }
 
 function nextPrevious(n) {
   let tab = document.getElementsByClassName("tab");
-
   if (n == 1 && !validateForm()) return false;
   tab[currentTab].style.display = "none";
+  callToSave(currentTab);
   currentTab = currentTab + n;
+  //Se finalizar o formulário
   if (currentTab >= tab.length) {
-    window.location.href = "../../results/page/result.html";
+    document.getElementById("easy-form").style.display = "none";
+    document.getElementById("end-screen").style.display = "block";
     return false;
   }
   showTab(currentTab);

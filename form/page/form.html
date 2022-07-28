@@ -28,28 +28,26 @@
     <div class="col-sm-12"> 
       
       <!-- FORM -->
-      <form id="easyForm" action="">
-        
-        <!-- One "tab" for each step in the form: -->
+      <form id="easy-form" action="">
         <div class="tab">
           <h1>Conhecendo Você</h1>
 
           <p> Queremos conhecer você! Aqui você deve colocar as informações básicas relacionadas ao seu empreendimento, definir qual o produto ou serviço que você oferece e qual segmento você atua.</p>
 
           <label> Nome da Empresa (Caso ainda não tenha pensado em um nome, digite: A definir): </label>
-          <p><input placeholder="Ex.: Empresa LTDA" oninput="this.className = ''"></p>
+          <p><input id="company-name-input" placeholder="Ex.: Empresa LTDA" oninput="this.className = ''"></p>
 
           <label> Nome do Empreendedor: </label>
-          <p><input placeholder="Ex.: Ciclano Deutrano" oninput="this.className = ''"></p>
+          <p><input id="entrepreneur-name-input" placeholder="Ex.: Ciclano Deutrano" oninput="this.className = ''"></p>
 
           <label> CPF ou CNPJ (Apenas números):</label>
-          <p><input type="number" placeholder="Ex.: 00000000000" oninput="this.className = ''"></p>
+          <p><input id="document-input" type="number" placeholder="Ex.: 00000000000" oninput="this.className = ''"></p>
 
           <label> Qual é o seu negócio? </label>
-          <p><input placeholder="Ex.: Fabricação de doces caseiros" oninput="this.className = ''"></p>
+          <p><input id="business-description-input" placeholder="Ex.: Fabricação de doces caseiros" oninput="this.className = ''"></p>
 
           <label> Qual é o seguimento de atuação? </label>
-          <p><input placeholder="Ex.: Alimentos" oninput="this.className = ''"></p>
+          <p><input id="business-segment-input" placeholder="Ex.: Alimentos" oninput="this.className = ''"></p>
 
         </div>
         
@@ -61,10 +59,10 @@
           </p>
 
           <label> Quem é seu consumidor? </label>
-          <p><input placeholder="Ex.: Empresas do setor imobiliário " oninput="this.className = ''"></p>
+          <p><input id="customer-who-input" placeholder="Ex.: Empresas do setor imobiliário " oninput="this.className = ''"></p>
 
           <label> Onde está seu consumidor? </label>
-          <p><select id="">
+          <p><select id="customer-where-input">
             <option value="Bairro">Bairro</option>
             <option value="Cidade">Cidade</option>
             <option value="Estado">Estado</option>
@@ -73,7 +71,7 @@
           </select></p>
 
           <label> Com qual frequência compram esse tipo de produto ou serviço?</label>
-          <p><select id="">
+          <p><select id="customer-frequency-input">
             <option value="Sempre">Sempre</option>
             <option value="Muitas vezes">Muitas vezes</option>
             <option value="Às vezes">Às vezes</option>
@@ -82,7 +80,7 @@
           </select></p>
 
           <label> Qual o principal fator que leva seu consumidor a comprar? </label>
-          <p><select id="">
+          <p><select id="customer-factor-input">
             <option value="Preço">Preço</option>
             <option value="Qualidade">Qualidade</option>
             <option value="Marca">Marca</option>
@@ -92,11 +90,11 @@
           </select></p>
 
           <label> Quem são seus principais concorrentes? </label>
-          <p><input placeholder="Ex.: Empreiteiras da região" oninput="this.className = ''"></p>
+          <p><input id="competitor-who-input" placeholder="Ex.: Empreiteiras da região" oninput="this.className = ''"></p>
 
           <label> Você possui fornecedores? </label>
-            <label class="radio-inline"><input type="radio" name="suppliers-input" value="Sim" >Sim</label>
-            <label class="radio-inline"><input type="radio" name="suppliers-input" value="Não" checked>Não</label>
+            <label class="radio-inline"><input type="radio" name="suppliers-have-input" value="Sim" >Sim</label>
+            <label class="radio-inline"><input type="radio" name="suppliers-have-input" value="Não" checked>Não</label>
 
         </div>
         
@@ -107,13 +105,13 @@
           </p>
 
           <label> Descreva seu produto ou serviço: </label>
-          <p><input placeholder="Ex.: doces decorados para festas" oninput="this.className = ''"></p>
+          <p><input id="product-description-input" placeholder="Ex.: doces decorados para festas" oninput="this.className = ''"></p>
 
           <label> Qual o diferencial que você pretende oferecer? </label>
-          <p><input placeholder="Ex.: Qualidade do produto com entrega rápida" oninput="this.className = ''"></p>
+          <p><input id="business-differential-input" placeholder="Ex.: Qualidade do produto com entrega rápida" oninput="this.className = ''"></p>
 
           <label> Qual será a principal forma de divulgação (marketing)?</label>
-          <p><select id="" >
+          <p><select id="main-advertising-input" >
             <option value="Anúncios on-line">Anúncios on-line</option>
             <option value="Redes Sociais">Redes Sociais</option>
             <option value="Rádio/jornais/revistas">Rádio/jornais/revistas</option>
@@ -124,12 +122,12 @@
           </select></p>
           
           <label> Qual será o preço médio unitário cobrado? </label>
-          <p>R$<input type="number" class="number-currency" value="1.00" step=".01"> por cada produto ou serviço</p>
+          <p>R$<input id="unit-price-input" type="number" class="number-currency" value="1.00" step=".01"> por cada produto ou serviço</p>
           
           <label> Qual a previsão de vendas? </label>
           <br>
           <p><label > Período: </label>
-          <select id="">
+          <select id="sales-period-input">
             <option value="Mensal">Mensal</option>
             <option value="Trimestral">Trimestral</option>
             <option value="Semestral">Semestral</option>
@@ -137,7 +135,7 @@
           </select></p>
           
           <p><label> Valor: </label>
-          R$<input type="number" class="number-currency" value="1.00" step=".01"> </p>
+          R$<input id="sales-total-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
           
 
         </div>
@@ -148,7 +146,7 @@
           <p>Nessa etapa, você deve determinar o total de recursos a ser investido para que o seu negócio funcione. Estes investimentos correspondem ao custo fixo de todos os bens que você necessita para sua produção ou prestação de serviço. Aqui também devem ser incluídas despesas como aluguel e salário de colaboradores.</p>
 
           <label> Qual o valor do investimento necessário? </label>
-          <p>R$<input type="number" class="number-currency" value="1.00" step=".01"> </p>
+          <p>R$<input id="capital-how-much-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
 
           <label> Você possui o valor necessário? </label>
           <label class="radio-inline"><input type="radio" name="need-capital-input" value="Sim" checked>Sim</label>
@@ -160,19 +158,20 @@
             <option value="Empréstimo com familiares">Empréstimo com familiares</option>
             <option value="Venda de bens">Venda de bens</option>
             <option value="Outros">Outros</option>
+            <option value="Reservas" hidden>Reservas</option>
           </select></p>
 
           <label> Qual o custo unitário médio de seu produto/serviço? (obrigatório)</label>
-          <p>R$<input type="number" class="number-currency" value="5.00" min="0,01" step=".01"> </p>
+          <p>R$<input id="unit-cost-input" type="number" class="number-currency" value="5.00" min="0,01" step=".01"> </p>
 
           <label> Qual o custo com colaboradores? </label>
-          <p>R$<input type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+          <p>R$<input id="collaborator-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
 
           <label> Qual o custo com aluguéis? </label>
-          <p>R$<input type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+          <p>R$<input id="rent-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
 
           <label> Outros custos (insira a soma total dos demais custos não citados acima): </label>
-          <p>R$<input type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+          <p>R$<input id="other-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
           
         </div>
         
@@ -186,7 +185,6 @@
         <p class="alert-warning" id="warning-message"> <b>ATENÇÃO!</b> Ao apertar o botão "Enviar" não haverá possibilidade de alterar as respostas.
         <br> Caso queira alterar alguma resposta ainda há tempo! Apenas aperte o botão "Anterior"</p>
         
-        <!-- Circles which indicates the steps of the form: -->
         <div style="text-align:center;margin-top:40px;">
           <span class="step"></span>
           <span class="step"></span>
@@ -201,11 +199,22 @@
 </div>
 
 
+<!-- End Screen-->
+<div id ="end-screen" class="container-fluid text-center" style="display: none;">    
+  <div class="row content">
+    <div class="col-sm-12 text-Center"> 
+      <h2>Parabéns!</h2>
+      <h3>Você concluiu o formulário, aperte o botão abaixo para visualizar o seu plano!</h3>
+      <button id="redirect-button">Ver o plano!</button>
+    </div>
+  </div>
+</div>
+
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
 
-<script src="../controllers/formIndex.js"></script>
 <script src="../controllers/formData.js"></script>
+<script src="../controllers/formIndex.js"></script>
 </body>
 </html>
