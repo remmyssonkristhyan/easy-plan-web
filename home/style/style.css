@@ -105,6 +105,23 @@ h1 {
   height: 100vh;
 }
 
+#carousels .container {
+  margin-top: 80px;
+}
+
+.carousel-title h3{
+  color: #0C1142;
+  font-weight: bold;
+}
+.carousel {
+  margin-top: 80px;
+}
+
+#carousels .item img {
+  height: 255px;
+  margin: 0 auto;
+}
+
 /* Learn More Section */
 
 #learn-more {
