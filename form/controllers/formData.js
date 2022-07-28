@@ -50,7 +50,7 @@ function generalInfo() {
     generalInfoForm = {
       "companyName": companyName.value,
       "entrepreneurName": entrepreneurName.value,
-      "document": documentInput.value,
+      "documentPerson": documentInput.value,
       "businessDescription": businessDescription.value,
       "businessSegment" : businessSegment.value
     }
@@ -159,13 +159,23 @@ saveAllToDatabase();
 function saveAllToDatabase() {
 
   let allFormData = [
-    generalInfoForm,
-    marketAnalysisForm,
-    marketingPlanForm,
-    financialAnalysisForm
+    {
+      "generalInfo": generalInfoForm,
+    },
+    {
+      "marketAnalysis": marketAnalysisForm,
+    },
+    {
+      "marketingPlanForm": marketingPlanForm,
+    },
+    {
+      "financialAnalysisForm": financialAnalysisForm
+    }
   ]
 
 console.log(allFormData)
+
+localStorage.setItem("allData",JSON.stringify(allFormData));
 
 console.log('Dados enviados');
 
