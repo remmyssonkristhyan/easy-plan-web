@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+
+html, body {
+  font-family: Sintony, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #0C1142;
+  margin-bottom: 0;
+  border: 0;
+}
+
+/* First Section */
+
+#first-section {
+  height: 100vh;
+  background-color: #0C1142;
+}
+
+#presentation-content {
+  color: white;
+  padding-top: 80px;
+  padding-left: 40px;
+}
+
+.main-image img {
+  width: 80%;
+  border-radius: 15px;
+  padding-top: 80px;
+}
+
+/* Cenario Section */
+
+#cenario {
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+#cenario h4 {
+  color: #0C1142;
+  padding-top: 40px;  
+}
+
+.cenario-info {
+  padding-top: 60px;
+}
+
+.box-cenario-info {
+  border: 2px solid #589CFF;
+  height: 60vh;
+}
+
+.title-box-cenario {
+  height: 50%;
+}
+
+.text-box-cenario {
+  height: 50%;
+}
+
+.title-box-cenario h2 {
+  color: #0C1142;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.text-box-cenario p {
+  color: #0C1142;
+  font-size: 20px;
+}
+
+/* Why Easy Plan Section */
+
+#why-easy-plan {
+  height: 95vh;
+  width: 95vw;
+  margin: auto auto;
+  background-color: #AAEEF1;
+  color: #0C1142;
+}
+
+#why-easy-plan h4 {
+  padding-top: 40px;  
+}
+
+#why-easy-plan-paragraph {
+  width: 80%;
+}
+
+#why-easy-plan h3 {
+  font-weight: bold;
+}
+
+#why-easy-plan ul {
+  list-style-position: inside;
+}
+
+/* Carousel Section */
+
+#carousels {
+  height: 100vh;
+}
+
+/* Learn More Section */
+
+#learn-more {
+  height: 100vh;
+  background-color: #0C1142;
+  color: white;
+}
+
+.cards {
+  max-width: 980px;
+  margin: auto auto;
+}
+
+.cards .image img {
+  width: 100%;
+}
