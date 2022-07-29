@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+
+/* Layout */
 *{
+  font-family: Sintony, Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 body{
@@ -9,13 +13,178 @@ body{
   align-items: center;
 }
 
+h1 {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+u {
+  text-decoration: underline;
+}
+
 button
-{margin-top: 10px;}
+{
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFFFC8;
+  font-weight: bold;
+  color: #000000;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
 
+h3{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
 
-.card{
+button:hover {
+  filter: grayscale(20%);
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #0C1142;
+  color: #FFFFFF;
+}
+
+.row.content {height: 450px}
+
+.bottom-nav {
+  background-color: #0C1142;
+  padding: 20px;
+}
+.middle-nav {
+  background-color: #589CFF;
+  padding: 20px;
+}
+
+#card-info-wrapper{
+  padding: 0;
+  padding-bottom: 50px;
+}
+
+#logo-pdf {
+  background-color: #0C1142;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+#card-info-container{
+  background: url(../images/trailHD.png) center center, linear-gradient(120deg, #485563 10%, #29323c 90%);;
+}
+
+#bottom-nav{
+  background-color: #0C1142;
+  padding: 10px;
+}
+.card-info{
   display: table;
   margin: 0 auto;
-  padding: 0 5%;
-  border: 1px solid black;
+  margin-top: 5%;
+  padding: 1% 2%;
+  border: 2px solid rgb(22, 22, 22);
+  width: 50%;
+  box-shadow: 5px 5px 5px #000000;;
+  color: #000000;
+}
+
+.card-info-note{
+  font-size: 12px;
+}
+
+.card-info-introduction{
+  padding-bottom: 10px;
+}
+
+.card-info:hover {
+    transform: translateY(-7px);
+}
+
+.pink{ background-color:#F5D4E9;}
+.purple{ background-color:#D6D0F5;}
+.orange{ background-color:#F8E3D4;}
+.blue{ background-color:#BDD0EB;}
+.yellow{ background-color:#F9F4CF;}
+.green{ background-color:#B3DFB5;}
+
+/* Seção de Recomendados */
+
+#learn-more {
+  background-color: #0C1142;
+  color: white;
+  padding-bottom: 15px;
+}
+
+#learn-more h4 {
+  padding-top: 35px;  
+}
+
+#learn-more .main-content {
+  padding-top: 30px;  
+}
+
+#learn-more h2 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.cards {
+  max-width: 980px;
+  margin: 30px auto;
+}
+
+.card {
+  box-shadow: 5px 5px 15px -4px #000000;
+  transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  filter: grayscale(20%);
+}
+
+.card .image img {
+  width: 100%;
+}
+
+.card .content {
+  height: 90px;
+  padding: 20px;
+  background-color: #FFFFC8;
+}
+
+.card a {
+  color: #0C1142;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #589CFF;
+  color: #000000;
+  font-weight: bold;
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+footer .social-network img {
+  height: 50px;
+} 
+footer .social-network img:hover{   
+  transform: translateY(-2px);
+}
+
+/* Para tela pequena */
+@media screen and (max-width: 767px) {
+  .row.content {height:auto;} 
+  .card-info {width: 75%;}
 }
