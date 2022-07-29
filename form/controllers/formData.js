@@ -50,7 +50,7 @@ function generalInfo() {
     generalInfoForm = {
       "businessName": businessName.value,
       "entrepreneurName": entrepreneurName.value,
-      "documentPerson": businessDocument.value,
+      "businessDocument": businessDocument.value,
       "businessDescription": businessDescription.value,
       "businessSegment" : businessSegment.value
     }

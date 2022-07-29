@@ -55,15 +55,15 @@ let financialAnalysis = JSON.parse(financialAnalysisForm);
 
 //Dados relevantes (usados mais de uma vez)
 //MarketingPlanCard
-const averageUnitPrice = parseFloat(marketingPlan.averageUnitPrice);
-const salesTotal = parseFloat(marketingPlan.salesTotal);
+const averageUnitPrice = parseFloat(marketingPlan.averageUnitPrice)
+const salesTotal = parseFloat(marketingPlan.salesTotal)
 
 //FinancialAnalysisCard
-const initialFunding = parseFloat(financialAnalysis.initialFunding);
-const averageUnitCost = parseFloat(financialAnalysis.averageUnitCost);
-const collaboratorCost = parseFloat(financialAnalysis.collaboratorCost);
-const rentCost = parseFloat(financialAnalysis.rentCost);
-const otherCost = parseFloat(financialAnalysis.otherCost);
+const initialFunding = parseFloat(financialAnalysis.initialFunding)
+const averageUnitCost = parseFloat(financialAnalysis.averageUnitCost)
+const collaboratorCost = parseFloat(financialAnalysis.collaboratorCost)
+const rentCost = parseFloat(financialAnalysis.rentCost)
+const otherCost = parseFloat(financialAnalysis.otherCost)
 
 //Manipular respostas
 //MarketAnalysisCard
@@ -74,17 +74,17 @@ if (marketAnalysis.hasSupplier === "Sim") supplierMessage = 'Já possui forneced
 if (marketAnalysis.hasSupplier === "Não") supplierMessage = 'Ainda não possui fornecedores'
 
 //MarketingPlanCard
-let salesMessage = `Total de R$ ${salesTotal}  ${marketingPlan.salesPeriod}`
+let salesMessage = `Total de R$ ${parseFloat(salesTotal).toFixed(2)}  ${marketingPlan.salesPeriod}`
 
 //FinancialAnalysisCard
 let initialFundingMessage = ''
-if (financialAnalysis.hasCapital === 'Sim') initialFundingMessage = `É necessário o investimento de R$ ${initialFunding}, sendo que já possui o investimento necessário`
-if (financialAnalysis.hasCapital === 'Não') initialFundingMessage = `É necessário o investimento de R$ ${initialFunding}, sendo que ainda não possui o investimento necessário e provavelmente irá ${financialAnalysis.fundingWay} para obter`
+if (financialAnalysis.hasCapital === 'Sim') initialFundingMessage = `É necessário o investimento de R$ ${parseFloat(initialFunding).toFixed(2)}, sendo que já possui o investimento necessário`
+if (financialAnalysis.hasCapital === 'Não') initialFundingMessage = `É necessário o investimento de R$ ${parseFloat(initialFunding).toFixed(2)}, sendo que ainda não possui o investimento necessário e provavelmente irá ${financialAnalysis.fundingWay} para obter`
 
 //ResultsReportCard
 const invoicingCalculate = averageUnitPrice * salesTotal;
 const costsCalculate = averageUnitCost + collaboratorCost + rentCost + otherCost;
-const operationalResultCalculate = invoicingCalculate + costsCalculate;
+const operationalResultCalculate = invoicingCalculate - costsCalculate;
 
 //ViabilityIndicatorsCard
 const contributionMarginCalculate = (invoicingCalculate - costsCalculate) / invoicingCalculate;
@@ -92,6 +92,8 @@ const balancePointCalculate = costsCalculate / contributionMarginCalculate;
 const profitabilityCalculate = operationalResultCalculate / invoicingCalculate;
 const returnCalculate = (operationalResultCalculate / initialFunding) * 100;
 const returnPeriodCalculate = initialFunding / operationalResultCalculate;
+
+console.log(operationalResultCalculate)
 
 
 //Exibir informações para o usuário
@@ -111,20 +113,20 @@ supplierValue.innerHTML = supplierMessage;
 productValue.innerHTML = marketingPlan.productDescription;
 businessDifferentialValue.innerHTML = marketingPlan.businessDifferential;
 mainAdvertisingValue.innerHTML = marketingPlan.mainAdvertising;
-averageUnitPriceValue.innerHTML = `R$ ${averageUnitPrice}`;
+averageUnitPriceValue.innerHTML = `R$ ${parseFloat(averageUnitPrice).toFixed(2)}`;
 salesValue.innerHTML = salesMessage;
 
 //FinancialAnalysisCard
 initialFundingValue.innerHTML = initialFundingMessage;
-averageUnitCostValue.innerHTML = `R$ ${averageUnitCost}`;
-collaboratorCostValue.innerHTML = `R$ ${collaboratorCost}`;
-rentCostValue.innerHTML = `R$ ${rentCost}`;
-otherCostValue.innerHTML = `R$ ${otherCost}`;
+averageUnitCostValue.innerHTML = `R$ ${parseFloat(averageUnitCost).toFixed(2)}`;
+collaboratorCostValue.innerHTML = `R$ ${parseFloat(collaboratorCost).toFixed(2)}`;
+rentCostValue.innerHTML = `R$ ${parseFloat(rentCost).toFixed(2)}`;
+otherCostValue.innerHTML = `R$ ${parseFloat(otherCost).toFixed(2)}`;
 
 //ResultsReportCard
-invoicingValue.innerHTML = parseFloat(invoicingCalculate).toFixed(2);
-costsValue.innerHTML = parseFloat(costsCalculate).toFixed(2);
-operationalResultValue.innerHTML = parseFloat(operationalResultCalculate).toFixed(2);
+invoicingValue.innerHTML = `R$ ${parseFloat(invoicingCalculate).toFixed(2)}`;
+costsValue.innerHTML = `R$ ${parseFloat(costsCalculate).toFixed(2)}`;
+operationalResultValue.innerHTML = `R$ ${parseFloat(operationalResultCalculate).toFixed(2)}`;
 
 //Viability-indicators-card
 contributionMarginValue.innerHTML = parseFloat(contributionMarginCalculate).toFixed(2);

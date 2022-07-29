@@ -1,5 +1,5 @@
 const pdfButton = document.querySelector('#pdf-button');
-const cards = document.querySelector('#card-container');
+const cards = document.querySelector('#card-info-container');
 
 pdfButton.addEventListener ('click' , () => {
 
