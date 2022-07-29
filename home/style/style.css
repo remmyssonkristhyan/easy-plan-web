@@ -55,6 +55,7 @@ a:hover {
 
 .box-cenario-info {
   border: 2px solid #589CFF;
+  border-collapse: collapse;
   height: 60vh;
 }
 
@@ -87,20 +88,33 @@ a:hover {
   color: #0C1142;
 }
 
-#why-easy-plan h4 {
-  padding-top: 40px;  
+#why-easy-plan h5 {
+  padding-top: 20px;
+  font-weight: bold; 
 }
 
 #why-easy-plan-paragraph {
+  padding-top: 20px;  
   width: 80%;
 }
 
 #why-easy-plan h3 {
   font-weight: bold;
+  margin-top: 15px;
 }
 
-#why-easy-plan ul {
-  list-style-position: inside;
+#why-easy-plan img,  #why-easy-plan figcaption {
+  width: 300px;
+}
+
+#why-easy-plan img {
+  border: 2.5px solid #0C1142;
+  border-radius: 10px;
+}
+
+#why-easy-plan figcaption {
+  font-weight: bold;
+  margin: 5px auto;
 }
 
 /* Carousel Section */
@@ -172,14 +186,9 @@ a:hover {
   top: 0;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(60deg, #0C1142 0%, #0C1142 100%);
+  background-color: #0C1142;
   opacity: .3;
   transition: 1s ease;
-}
-
-/* Não está funcionando esse efeito */
-.card .image:hover .image::after {
-  opacity: 0;
 }
 
 .card .image img {
