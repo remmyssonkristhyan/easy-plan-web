@@ -1,27 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
-/*BOOTSTRAP*/
-/* LAYOUT */
-.navbar {
-  margin-bottom: 0;
-  border-radius: 0;
-  background-color: #0C1142;
-  color: #FFFFFF;
-}
 
-.row.content {height: 450px}
-
-u {
-  text-decoration: underline;
-}
-
-footer {
-  background-color: #589CFF;
-  color: #000000;
-  padding: 15px;
-  
-}
-
-/* CUSTOM (VANILLA)*/
+/* Layout */
 *{
   font-family: Sintony, Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -32,6 +11,18 @@ footer {
 body{
   text-align: center;
   align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+u {
+  text-decoration: underline;
 }
 
 button
@@ -55,6 +46,15 @@ h3{
 button:hover {
   filter: grayscale(20%);
 }
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #0C1142;
+  color: #FFFFFF;
+}
+
+.row.content {height: 450px}
 
 .bottom-nav {
   background-color: #0C1142;
@@ -114,19 +114,7 @@ button:hover {
 .yellow{ background-color:#F9F4CF;}
 .green{ background-color:#B3DFB5;}
 
-
-
-/* HOME */
-
-h1 {
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-/* Learn More Section */
+/* Seção de Recomendados */
 
 #learn-more {
   background-color: #0C1142;
@@ -195,7 +183,7 @@ footer .social-network img:hover{
   transform: translateY(-2px);
 }
 
-
+/* Para tela pequena */
 @media screen and (max-width: 767px) {
   .row.content {height:auto;} 
   .card-info {width: 75%;}

@@ -74,7 +74,7 @@ if (marketAnalysis.hasSupplier === "Sim") supplierMessage = 'Já possui forneced
 if (marketAnalysis.hasSupplier === "Não") supplierMessage = 'Ainda não possui fornecedores'
 
 //MarketingPlanCard
-let salesMessage = `Total de R$ ${parseFloat(salesTotal).toFixed(2)}  ${marketingPlan.salesPeriod}`
+let salesMessage = `Total de produtos/serviços vendidos ${parseFloat(salesTotal).toFixed(0)}, período  ${marketingPlan.salesPeriod}`
 
 //FinancialAnalysisCard
 let initialFundingMessage = ''
@@ -89,7 +89,7 @@ const operationalResultCalculate = invoicingCalculate - costsCalculate;
 //ViabilityIndicatorsCard
 const contributionMarginCalculate = (invoicingCalculate - costsCalculate) / invoicingCalculate;
 const balancePointCalculate = costsCalculate / contributionMarginCalculate;
-const profitabilityCalculate = operationalResultCalculate / invoicingCalculate;
+const profitabilityCalculate = (operationalResultCalculate / invoicingCalculate) * 100;
 const returnCalculate = (operationalResultCalculate / initialFunding) * 100;
 const returnPeriodCalculate = initialFunding / operationalResultCalculate;
 
@@ -129,8 +129,8 @@ costsValue.innerHTML = `R$ ${parseFloat(costsCalculate).toFixed(2)}`;
 operationalResultValue.innerHTML = `R$ ${parseFloat(operationalResultCalculate).toFixed(2)}`;
 
 //Viability-indicators-card
-contributionMarginValue.innerHTML = parseFloat(contributionMarginCalculate).toFixed(2);
-balancePointValue.innerHTML = parseFloat(balancePointCalculate).toFixed(2);
-profitabilityValue.innerHTML = parseFloat(profitabilityCalculate).toFixed(2);
-returnValue.innerHTML = parseFloat(returnCalculate).toFixed(2);
-returnPeriodValue.innerHTML = parseFloat(returnPeriodCalculate).toFixed(2);
+contributionMarginValue.innerHTML = `R$ ${parseFloat(contributionMarginCalculate).toFixed(2)}`;
+balancePointValue.innerHTML = `R$ ${parseFloat(balancePointCalculate).toFixed(2)}`;
+profitabilityValue.innerHTML = `${parseFloat(profitabilityCalculate).toFixed(2)}%`;
+returnValue.innerHTML = `${parseFloat(returnCalculate).toFixed(2)}%`;
+returnPeriodValue.innerHTML = `R$ ${parseFloat(returnPeriodCalculate).toFixed(2)} por ano`;
