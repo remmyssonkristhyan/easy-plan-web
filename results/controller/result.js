@@ -83,17 +83,18 @@ if (financialAnalysis.hasCapital === 'Não') initialFundingMessage = `É necess�
 
 //ResultsReportCard
 const invoicingCalculate = averageUnitPrice * salesTotal;
-const costsCalculate = averageUnitCost + collaboratorCost + rentCost + otherCost;
-const operationalResultCalculate = invoicingCalculate - costsCalculate;
+const fixedcostsCalculate = collaboratorCost + rentCost + otherCost;
+const operationalResultCalculate = invoicingCalculate - fixedcostsCalculate;
+const totalVariableCosts = averageUnitCost * salesTotal
 
 //ViabilityIndicatorsCard
-const contributionMarginCalculate = (invoicingCalculate - costsCalculate) / invoicingCalculate;
-const balancePointCalculate = costsCalculate / contributionMarginCalculate;
+const contributionMarginCalculate = ((invoicingCalculate - totalVariableCosts ) / invoicingCalculate) * 100;
+const balancePointCalculate = fixedcostsCalculate / (contributionMarginCalculate / 100);
 const profitabilityCalculate = (operationalResultCalculate / invoicingCalculate) * 100;
 const returnCalculate = (operationalResultCalculate / initialFunding) * 100;
 const returnPeriodCalculate = initialFunding / operationalResultCalculate;
 
-console.log(operationalResultCalculate)
+console.log(fixedcostsCalculate)
 
 
 //Exibir informações para o usuário
@@ -125,12 +126,12 @@ otherCostValue.innerHTML = `R$ ${parseFloat(otherCost).toFixed(2)}`;
 
 //ResultsReportCard
 invoicingValue.innerHTML = `R$ ${parseFloat(invoicingCalculate).toFixed(2)}`;
-costsValue.innerHTML = `R$ ${parseFloat(costsCalculate).toFixed(2)}`;
+costsValue.innerHTML = `R$ ${parseFloat(fixedcostsCalculate).toFixed(2)}`;
 operationalResultValue.innerHTML = `R$ ${parseFloat(operationalResultCalculate).toFixed(2)}`;
 
 //Viability-indicators-card
-contributionMarginValue.innerHTML = `R$ ${parseFloat(contributionMarginCalculate).toFixed(2)}`;
+contributionMarginValue.innerHTML = `${parseFloat(contributionMarginCalculate).toFixed(2)}%`;
 balancePointValue.innerHTML = `R$ ${parseFloat(balancePointCalculate).toFixed(2)}`;
 profitabilityValue.innerHTML = `${parseFloat(profitabilityCalculate).toFixed(2)}%`;
 returnValue.innerHTML = `${parseFloat(returnCalculate).toFixed(2)}%`;
-returnPeriodValue.innerHTML = `R$ ${parseFloat(returnPeriodCalculate).toFixed(2)} por ano`;
+returnPeriodValue.innerHTML = `${parseFloat(returnPeriodCalculate).toFixed(0)} anos`;

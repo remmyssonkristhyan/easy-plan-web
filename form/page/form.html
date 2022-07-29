@@ -151,9 +151,8 @@
             <option value="Anual">Anual</option>
           </select></p>
           
-          <p><label> Valor: </label>
-          R$<input id="sales-total-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
-
+          <p><label> Quantidade: </label>
+          <input id="sales-total-input" type="number" class="number-currency" value="10" min="1"> Produtos vendidos</p>
 
         </div>
         
@@ -189,6 +188,12 @@
             <u>Dica</u>: Insira uma estimativa do custo médio para uma unidade de seus produtos/serviços.
           </p>
 
+ 
+          <label>
+             Para os custos citados abaixo, utilize como período o mesmo que foi selecionado para as estimativas de vendas.
+          </label> 
+
+
           <label> Qual o custo com colaboradores? </label>
           <p>R$<input id="collaborator-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
 
@@ -198,7 +203,7 @@
             <u>Dica</u>: Considere o valor total com aluguéis em geral. Exemplo: aluguel de espaço, veículo, ferramentas/equipamentos, etc.
           </p>
 
-          <label> Outros custos (insira a soma total dos demais custos não citados acima): </label>
+          <label> Outros custos(insira a soma total dos demais custos não citados acima): </label>
           <p>R$<input id="other-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
           
         </div>
