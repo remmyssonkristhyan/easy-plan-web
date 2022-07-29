@@ -1,41 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+/* LAYOUT */
+
+u {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #589CFF;
+  color: #000000;
+  padding: 15px;
+  
+}
+
 *{
+  font-family: Sintony, Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   text-decoration: none;
   font-size: 15px;
 }
 
-
-body{
-  overflow: hidden;
-  text-align: center;
+button
+{
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFFFC8;
+  font-weight: bold;
+  color: #000000;
+  border-radius: 5px;
+  border: 1px solid #000000;
 }
 
-button{
-  margin: 1%;
+button:hover {
+  filter: grayscale(20%);
 }
 
-p{
-  font-size: 1.2rem;
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #0C1142;
+  color: #FFFFFF;
 }
 
-h2 {
-  font-size: 2.5rem;
-}
+.row.content {height: 450px}
 
-h3 {
-  font-size: 1.5rem;
-}
+/* FORM */
 
 label {
-  font-size: 2rem;
+  font-size: 18px;
 }
 
-.introduction, .question, #end-form-screen {
-  padding-top: 2%;
-  font-size: 1.5rem;
-
-  display: block;
-  overflow: auto;
-  height: 100vh;
+input, select {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+    
+input[type="radio"] {
+  padding: 0px;
+  width: auto;
+  font-size: 13px;
+  border: none;
 }
 
+input.invalid {
+  background-color: #ffdddd;
+}
+
+#easy-form {
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 90%;
+  min-width: 300px;
+  font-size: 17px;
+}
+
+.form-introduction{
+  padding-bottom: 10px;
+}
+
+
+.number-quantity {
+  width: 50px;
+  padding: 1px;
+}
+
+.number-currency {
+  width: 100px;
+  padding: 2px;
+}
+
+.tab {
+  display: none;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #04AA6D;
+}
+
+.form-input-clue{
+  font-size: 12px;
+}
+
+/* Footer */
+footer {
+  background-color: #589CFF;
+  color: #000000;
+  font-weight: bold;
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+footer .social-network img {
+  height: 50px;
+} 
+footer .social-network img:hover{   
+  transform: translateY(-2px);
+}
+
+
+/* SMALL SCREEN */
+@media screen and (max-width: 767px) {
+  .row.content {height:auto;} 
+}

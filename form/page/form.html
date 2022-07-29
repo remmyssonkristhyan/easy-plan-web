@@ -3,118 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyPlan</title>
-  <link rel="stylesheet" href="../../style/form.css">
+  <link rel="icon" type="image/x-icon" href="../../images/favicon_io/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="../style/form.css">
 </head>
+
 <body>
-
-  <!-- Introduction General Info -->
-  <section class="introduction" id="introduction-general-info">
-    <h2> Informações Gerais do Negócio </h2>
-    <p> Para começarmos, vamos definir algumas informações gerais do seu negócio.</p>
-    <br>
-    <!-- Continue Button -->
-    <button class="continue-button" 
-    onclick="document.querySelector('#question1').scrollIntoView(); 
-    return false;"> Continuar </button>
-  </section>
-
-    <!-- Question 1-->
-	<form>
-    <div class="question checkbox-list" id="question1">
-		<label> Setor de Atuação: </label> <br>
-		<input type="checkbox" name="activity-input" value="Indústria"> Indústria <br>
-    <input type="checkbox" name="activity-input" value="Comércio"> Comércio <br>
-		<input type="checkbox" name="activity-input" value="Serviço"> Serviço <br>
-    <input type="checkbox" name="activity-input" value="Agronegócio"> Agronegócio <br>
-    <br>
-    <!-- Previous Button -->
-    <button class="previous-button" 
-    onclick="document.querySelector('#introduction-general-info').scrollIntoView(); 
-    return false;"> Voltar </button>
-    <!-- Continue Button -->
-    <button class="continue-button" 
-    onclick="document.querySelector('#question2').scrollIntoView(); 
-    return false;"> Continuar </button>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="../../images/logo-horizontal.png" alt="logo">
     </div>
-
-    <!-- Question 2-->
-    <div class="question checkbox-list" id="question2">
-		<label> Segmento: </label> <br>
-		<input type="checkbox" name="segment-input" value="Tecnologia"> Tecnologia <br>
-    <input type="checkbox" name="segment-input" value="Moda"> Moda <br>
-		<input type="checkbox" name="segment-input" value="Construção"> Construção <br>
-    <input type="checkbox" name="segment-input" value="Artesanato"> Artesanato <br>
-    <input type="checkbox" name="segment-input" value="Outro"> Outro <br>
-    <p>mais opções em breve!</p>
-    <br>
-    <!-- Previous Button -->
-    <button class="previous-button" 
-    onclick="document.querySelector('#question1').scrollIntoView(); 
-    return false;"> Voltar </button>
-    <!-- Continue Button -->
-    <button class="continue-button" 
-    onclick="document.querySelector('#question3').scrollIntoView(); 
-    return false;"> Continuar </button>
-    </div>
-
-    <!-- Question 3-->
-    <div class="question" id="question3">
-    <label>Resumo (descrição) do negócio:</label>
-    <br>
-		<textarea cols="30" rows="5" id="description-input" maxlength="500"></textarea>
-    <br>
-    <!-- Previous Button -->
-    <button class="previous-button" 
-    onclick="document.querySelector('#question2').scrollIntoView(); 
-    return false;"> Voltar </button>
-    <!-- Continue Button -->
-    <button class="continue-button" 
-    onclick="document.querySelector('#question4').scrollIntoView(); 
-    return false;"> Continuar </button>
-    </div>
-
-    <!-- Question4 -->
-    <div class="question" id="question4">
-		<label>Qual a missão do seu negócio?</label>
-    <br>
-		<textarea cols="30" rows="5" id="mission-input" maxlength="250"></textarea>
-    <br>
-    <!-- Previous Button -->
-    <button class="previous-button" 
-    onclick="document.querySelector('#question3').scrollIntoView(); 
-    return false;"> Voltar </button>
-    <!-- Continue Button -->
-    <button class="continue-button" 
-    onclick="document.querySelector('#end-form-screen').scrollIntoView(); 
-    return false;"> Continuar </button>
   </div>
+</nav>
+  
 
-  <!-- Final form buttons -->
-  <div id="end-form-screen">
-    <!-- Previous Button -->
-    <h3>Agora apenas aperte o botão "Salvar" que iremos gerar um plano simplificado para seu negócio</h3>
-    <br>
-    <p><b>ATENÇÃO!</b> Depois apertar o botão "Salvar" não tem mais como alterar as respostas.
-      Caso queira alterar alguma resposta ainda dá tempo! Apenas aperte o botão "Voltar"</p> 
-    <br>
-    <h3 id="plan-alert"></h3>
-    <!-- Previous Button -->
-    <button class="previous-button" id="end-form-previous-button"
-    onclick="document.querySelector('#question4').scrollIntoView(); 
-    return false;"> Voltar </button>
-    <!-- Save Button -->
-    <button id="save-button"> Salvar </button>
-    <!-- Next Page Button -->
-    <button id="next-button" disabled
-    onclick="window.location.href='../../../results/page/result.html';
-    return false;"> Visualizar Plano </button>
+<div class="container text-left">    
+  <div class="row content">
+    <div class="col-sm-12"> 
+      
+      <!-- FORM -->
+      <form id="easy-form" action="">
+        <div class="tab">
+          <h1>Conhecendo Você</h1>
+
+          <p class="form-introduction"> 
+            &nbsp&nbsp&nbsp Queremos conhecer você! Aqui você deve colocar as informações básicas relacionadas ao seu empreendimento, definir qual o produto ou serviço que você oferece e qual segmento você atua.
+          </p>
+
+          <label> Nome da Empresa (Caso ainda não tenha pensado em um nome, digite: A definir): </label>
+          <p><input id="business-name-input" placeholder="Ex.: Empresa LTDA" oninput="this.className = ''"></p>
+
+          <label> Nome do Empreendedor: </label>
+          <p><input id="entrepreneur-name-input" placeholder="Ex.: Ciclano Deutrano" oninput="this.className = ''"></p>
+
+          <label> CPF ou CNPJ (Apenas números):</label>
+          <p><input id="business-document-input" type="number" placeholder="Ex.: 00000000000" oninput="this.className = ''"></p>
+
+          <label> Qual é o seu negócio? </label>
+          <p><input id="business-description-input" placeholder="Ex.: Fabricação de doces caseiros" oninput="this.className = ''"></p>
+
+          <label> Qual é o seguimento de atuação? </label>
+          <p><input id="business-segment-input" placeholder="Ex.: Alimentos" oninput="this.className = ''"></p>
+
+        </div>
+        
+        <div class="tab">
+          <h1>Análise de Mercado</h1>
+
+          <p class="form-introduction">
+            &nbsp&nbsp&nbsp Agora vamos conhecer o mercado onde você atua, esta é uma das etapas mais importantes para a elaboração de seu plano. Os clientes precisam de soluções para algo necessário ou que desejam e você pode identificar essas soluções se conhecer bem o seu mercado.
+            <br> &nbsp&nbsp&nbsp Aqui vamos conhecer mais sobre seu setor de atuação, quem são seus clientes, seus concorrentes e quem são seus forcenedores.
+          </p>
+
+          <label> Quem é seu consumidor? </label>
+          <p><input id="customer-description-input" placeholder="Ex.: Empresas do setor imobiliário " oninput="this.className = ''"></p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: identifique as caracteristicas gerais dos seus clientes. Considere que seu consumidor pode ser tanto pessoa física (faixa etária, escolaridade, gênero, etc), quanto outros negócios (ramo de atuação, porte, etc).
+          </p>
+
+          <label> Onde está seu consumidor? </label>
+          <p><select id="customer-where-input">
+            <option value="Bairro">Bairro</option>
+            <option value="Cidade">Cidade</option>
+            <option value="Estado">Estado</option>
+            <option value="País">País</option>
+            <option value="Outros Países">Outros Países</option>
+          </select></p>
+
+          <label> Com qual frequência compram esse tipo de produto ou serviço?</label>
+          <p><select id="customer-frequency-input">
+            <option value="Sempre">Sempre</option>
+            <option value="Muitas vezes">Muitas vezes</option>
+            <option value="Às vezes">Às vezes</option>
+            <option value="Raramente">Raramente</option>
+            <option value="Nunca">Nunca</option>
+          </select></p>
+
+          <label> Qual o principal fator que leva seu consumidor a comprar? </label>
+          <p><select id="customer-factor-input">
+            <option value="Preço">Preço</option>
+            <option value="Qualidade">Qualidade</option>
+            <option value="Marca">Marca</option>
+            <option value="Prazo de entrega">Prazo de entrega</option>
+            <option value="Prazo de pagamento">Prazo de pagamento</option>
+            <option value="Atendimento">Atendimento</option>
+          </select></p>
+
+          <label> Quem são seus principais concorrentes? </label>
+          <p><input id="competitor-description-input" placeholder="Ex.: Empreiteiras da região" oninput="this.className = ''"></p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Descreva brevemente quem são, onde estão localizados, se praticam preços competitivos, etc.
+          </p>
+
+          <label> Você possui fornecedores? </label>
+            <label class="radio-inline"><input type="radio" name="has-supplier-input" value="Sim" >Sim</label>
+            <label class="radio-inline"><input type="radio" name="has-supplier-input" value="Não" checked>Não</label>
+
+        </div>
+        
+        <div class="tab">          
+          <h1>Plano de Marketing</h1>
+
+          <p class="form-introduction"> 
+            &nbsp&nbsp&nbsp Marketing ou Promoção são as ações que buscam apresentar, informar, convencer ou lembrar os clientes de adquirir seus produtos ou serviços e não os de concorrentes. 
+            <br> &nbsp&nbsp&nbsp Isso começa por definir qual é o seu produto/serviço e qual o diferencial que você pretende oferecer. Também é o momento de escolher quais serão sua estratégia de divulgação, além de definir o preço e a quantidade que se pretende vender.
+          </p>
+
+          <label> Descreva seu produto ou serviço: </label>
+          <p><input id="product-description-input" placeholder="Ex.: doces decorados para festas" oninput="this.className = ''"></p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Descreva os principais itens que serão fabricados/vendidos ou os serviços que serão prestados.
+          </p>
+
+          <label> Qual o diferencial que você pretende oferecer? </label>
+          <p><input id="business-differential-input" placeholder="Ex.: Qualidade do produto com entrega rápida" oninput="this.className = ''"></p>
+
+          <label> Qual será a principal forma de divulgação (marketing)?</label>
+          <p><select id="main-advertising-input" >
+            <option value="Anúncios on-line">Anúncios on-line</option>
+            <option value="Redes Sociais">Redes Sociais</option>
+            <option value="Rádio/jornais/revistas">Rádio/jornais/revistas</option>
+            <option value="Folhetos e cartões de visita">Folhetos e cartões de visita</option>
+            <option value="Brindes e sorteios">Brindes e sorteios</option>
+            <option value="Promoções e descontos">Promoções e descontos</option>
+            <option value="Participações em eventos">Participações em eventos</option>
+          </select></p>
+          
+          <label> Qual será o preço médio unitário cobrado? </label>
+          <p>R$<input id="average-unit-price-input" type="number" class="number-currency" value="1.00" step=".01"> por cada produto ou serviço</p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Para calcular, some o preço de todos seus produtos/serviços e divida pela quantidade de produtos/serviços.
+          </p>
+          
+          <label> Qual a previsão de vendas? </label>
+          <br>
+          <p><label > Período: </label>
+          <select id="sales-period-input">
+            <option value="Mensal">Mensal</option>
+            <option value="Trimestral">Trimestral</option>
+            <option value="Semestral">Semestral</option>
+            <option value="Anual">Anual</option>
+          </select></p>
+          
+          <p><label> Quantidade: </label>
+          <input id="sales-total-input" type="number" class="number-currency" value="10" min="1"> Produtos vendidos</p>
+
+        </div>
+        
+        <div class="tab">
+          <h1>Análise Financeira</h1>
+
+          <p class="form-introduction">
+            &nbsp&nbsp&nbsp Nessa etapa, você deve determinar o total de recursos a ser investido para que o seu negócio funcione. Estes investimentos correspondem ao custo fixo de todos os bens que você necessita para sua produção ou prestação de serviço. 
+            <br> &nbsp&nbsp&nbsp Aqui também devem ser incluídas despesas como aluguel e salário de colaboradores.
+          </p>
+
+          <label> Qual o valor do investimento necessário? </label>
+          <p>R$<input id="initial-funding-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Valor total do investimento necessário para seu negócio funcionar. Exemplo: compra de máquinas, ferramentas, veículo, etc.
+          </p>
+          <label> Você possui o valor necessário? </label>
+          <label class="radio-inline"><input type="radio" name="has-capital-input" value="Sim" checked>Sim</label>
+          <label class="radio-inline"><input type="radio" name="has-capital-input" value="Não">Não</label>
+
+          <label id="funding-way-label" style="display: none"> Como pretende captar esse valor? </label>
+          <select id="funding-way-input" style="display: none">
+            <option value="Empréstimo bancário<">Empréstimo bancário</option>
+            <option value="Empréstimo com familiares">Empréstimo com familiares</option>
+            <option value="Venda de bens">Venda de bens</option>
+            <option value="Outros">Outros</option>
+            <option value="Reservas" hidden>Reservas</option>
+          </select></p>
+
+          <label> Qual o custo unitário médio de seu produto/serviço? (obrigatório)</label>
+          <p>R$<input id="average-unit-cost-input" type="number" class="number-currency" value="5.00" min="0,01" step=".01"> </p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Insira uma estimativa do custo médio para uma unidade de seus produtos/serviços.
+          </p>
+
+ 
+          <label>
+             Para os custos citados abaixo, utilize como período o mesmo que foi selecionado para as estimativas de vendas.
+          </label> 
+
+
+          <label> Qual o custo com colaboradores? </label>
+          <p>R$<input id="collaborator-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+
+          <label> Qual o custo com aluguéis? </label>
+          <p>R$<input id="rent-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Considere o valor total com aluguéis em geral. Exemplo: aluguel de espaço, veículo, ferramentas/equipamentos, etc.
+          </p>
+
+          <label> Outros custos(insira a soma total dos demais custos não citados acima): </label>
+          <p>R$<input id="other-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+          
+        </div>
+        
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button type="button" id="previous-button" onclick="nextPrevious(-1)">Anterior</button>
+            <button type="button" id="next-button" onclick="nextPrevious(1)">Próximo</button>
+          </div>
+        </div>
+
+        <p class="alert-warning" id="warning-message"> <b>ATENÇÃO!</b> Ao apertar o botão "Enviar" não haverá possibilidade de alterar as respostas.
+        <br> Caso queira alterar alguma resposta ainda há tempo! Apenas aperte o botão "Anterior"</p>
+        
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        
+        </form>
+
+    </div>
   </div>
-</form>
+</div>
 
-  <!-- JavaScript Links -->
-  <script src="../../controllers/formIndex.js"></script>
-  <script src="../../controllers/formData.js"></script>
+
+<!-- End Screen-->
+<div id ="end-screen" class="container-fluid text-center" style="display: none;">    
+  <div class="row content">
+    <div class="col-sm-12 text-Center"> 
+      <h2>Parabéns!</h2>
+      <h3>Você concluiu o formulário, aperte o botão abaixo para visualizar o seu plano!</h3>
+      <button id="redirect-button">Ver o plano!</button>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>2022 - Easy Plan</p>
+</footer>
+
+<script src="../controllers/formData.js"></script>
+<script src="../controllers/formIndex.js"></script>
 </body>
 </html>
