@@ -1,8 +1,17 @@
 @media screen and (max-width: 1000px) {
     
     /* First Section */
+    #first-section {
+        height: auto;
+    }
+
     #presentation-content h1 {
         font-size: 30px;
+    }
+    
+    .main-image img {
+        width: 300px;
+        margin-bottom: 30px;
     }
     
     /* Cenario Section */
