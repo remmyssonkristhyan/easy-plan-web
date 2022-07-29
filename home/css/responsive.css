@@ -1,0 +1,28 @@
+@media screen and (max-width: 767px) {
+    
+    /* First Section */
+    #presentation-content h1 {
+        font-size: 30px;
+    }
+    
+    /* Cenario Section */
+    .box-cenario-info {
+        height: auto;
+    }
+
+    /* Why Easy Plan Section */
+    #why-easy-plan {
+        height: auto;
+    }
+    #why-easy-plan img,  #why-easy-plan figcaption {
+        width:  70%;
+    }
+    #why-easy-plan figcaption {
+        margin-bottom: 10px;
+    }
+    
+    /* Learn More Section */
+    #learn-more {
+        height: auto;
+    }
+}
