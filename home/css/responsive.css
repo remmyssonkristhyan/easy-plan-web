@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1000px) {
     
     /* First Section */
     #presentation-content h1 {
@@ -6,7 +6,7 @@
     }
     
     /* Cenario Section */
-    .box-cenario-info {
+    #cenario {
         height: auto;
     }
 
@@ -46,5 +46,30 @@
     /* Learn More Section */
     #learn-more {
         height: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    /* Cenario Section */
+    .box-cenario-info {
+        height: 200px;
+    }
+
+    .title-box-cenario h2 {
+        font-size: 30px;
+    }
+
+    .text-box-cenario p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    /* Cenario Section */
+    .cenario-info {
+        padding-top: 30px;
+        margin-bottom: 30px;
     }
 }
