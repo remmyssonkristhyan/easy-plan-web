@@ -210,7 +210,6 @@ a:hover {
 }
 
 .card {
-  box-shadow: 5px 5px 15px -4px #000000;
   transition: all 0.3s ease 0s;
 }
 
