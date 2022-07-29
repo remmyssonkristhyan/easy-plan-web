@@ -183,6 +183,12 @@ a:hover {
   margin: 0 auto;
 }
 
+.carousel-caption h3 {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: -1px 0 #0C1142, 0 1px #0C1142, 1px 0 #0C1142, 0 -1px #0C1142;
+}
+
 /* Learn More Section */
 
 #learn-more {
