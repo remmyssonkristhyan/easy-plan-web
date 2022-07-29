@@ -63,6 +63,9 @@
 
           <label> Quem é seu consumidor? </label>
           <p><input id="customer-description-input" placeholder="Ex.: Empresas do setor imobiliário " oninput="this.className = ''"></p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: identifique as caracteristicas gerais dos seus clientes. Considere que seu consumidor pode ser tanto pessoa física (faixa etária, escolaridade, gênero, etc), quanto outros negócios (ramo de atuação, porte, etc).
+          </p>
 
           <label> Onde está seu consumidor? </label>
           <p><select id="customer-where-input">
@@ -94,6 +97,9 @@
 
           <label> Quem são seus principais concorrentes? </label>
           <p><input id="competitor-description-input" placeholder="Ex.: Empreiteiras da região" oninput="this.className = ''"></p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Descreva brevemente quem são, onde estão localizados, se praticam preços competitivos, etc.
+          </p>
 
           <label> Você possui fornecedores? </label>
             <label class="radio-inline"><input type="radio" name="has-supplier-input" value="Sim" >Sim</label>
@@ -111,6 +117,9 @@
 
           <label> Descreva seu produto ou serviço: </label>
           <p><input id="product-description-input" placeholder="Ex.: doces decorados para festas" oninput="this.className = ''"></p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Descreva os principais itens que serão fabricados/vendidos ou os serviços que serão prestados.
+          </p>
 
           <label> Qual o diferencial que você pretende oferecer? </label>
           <p><input id="business-differential-input" placeholder="Ex.: Qualidade do produto com entrega rápida" oninput="this.className = ''"></p>
@@ -128,6 +137,9 @@
           
           <label> Qual será o preço médio unitário cobrado? </label>
           <p>R$<input id="average-unit-price-input" type="number" class="number-currency" value="1.00" step=".01"> por cada produto ou serviço</p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Para calcular, some o preço de todos seus produtos/serviços e divida pela quantidade de produtos/serviços.
+          </p>
           
           <label> Qual a previsão de vendas? </label>
           <br>
@@ -155,7 +167,9 @@
 
           <label> Qual o valor do investimento necessário? </label>
           <p>R$<input id="initial-funding-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
-
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Valor total do investimento necessário para seu negócio funcionar. Exemplo: compra de máquinas, ferramentas, veículo, etc.
+          </p>
           <label> Você possui o valor necessário? </label>
           <label class="radio-inline"><input type="radio" name="has-capital-input" value="Sim" checked>Sim</label>
           <label class="radio-inline"><input type="radio" name="has-capital-input" value="Não">Não</label>
@@ -171,12 +185,18 @@
 
           <label> Qual o custo unitário médio de seu produto/serviço? (obrigatório)</label>
           <p>R$<input id="average-unit-cost-input" type="number" class="number-currency" value="5.00" min="0,01" step=".01"> </p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Insira uma estimativa do custo médio para uma unidade de seus produtos/serviços.
+          </p>
 
           <label> Qual o custo com colaboradores? </label>
           <p>R$<input id="collaborator-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
 
           <label> Qual o custo com aluguéis? </label>
           <p>R$<input id="rent-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>
+          <p class="form-input-clue"> 
+            <u>Dica</u>: Considere o valor total com aluguéis em geral. Exemplo: aluguel de espaço, veículo, ferramentas/equipamentos, etc.
+          </p>
 
           <label> Outros custos (insira a soma total dos demais custos não citados acima): </label>
           <p>R$<input id="other-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>

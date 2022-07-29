@@ -157,20 +157,44 @@ saveAllToDatabase();
 
 }
 function saveAllToDatabase() {
-
+  
+  let generalInfoForm = localStorage.getItem("generalInfo");
+  let generalInfoLocal= JSON.parse(generalInfoForm);
+  
+  let marketAnalysisForm = localStorage.getItem("marketAnalysis");
+  let marketAnalysisLocal = JSON.parse(marketAnalysisForm);
+  
+  let marketingPlanForm = localStorage.getItem("marketingPlan");
+  let marketingPlanLocal = JSON.parse(marketingPlanForm);
+  
+  let financialAnalysisForm = localStorage.getItem("financialAnalysis");
+  let financialAnalysisLocal = JSON.parse(financialAnalysisForm);
+  
   let allFormData = [
-    {
-      "generalInfo": generalInfoForm,
-    },
-    {
-      "marketAnalysis": marketAnalysisForm,
-    },
-    {
-      "marketingPlanForm": marketingPlanForm,
-    },
-    {
-      "financialAnalysisForm": financialAnalysisForm
-    }
+    generalInfoLocal.businessName,
+    generalInfoLocal.entrepreneurName,
+    generalInfoLocal.businessDocument,
+    generalInfoLocal.businessDescription,
+    generalInfoLocal.businessSegment,
+    marketAnalysisLocal.customerDescription,
+    marketAnalysisLocal.customerWhere,
+    marketAnalysisLocal.customerFrequency,
+    marketAnalysisLocal.customerFactor,
+    marketAnalysisLocal.competitorDescription,
+    marketAnalysisLocal.hasSupplier,
+    marketingPlanLocal.productDescription,
+    marketingPlanLocal.businessDifferential,
+    marketingPlanLocal.mainAdvertising,
+    marketingPlanLocal.averageUnitPrice,
+    marketingPlanLocal.salesPeriod,
+    marketingPlanLocal.salesTotal,
+    financialAnalysisLocal.initialFunding,
+    financialAnalysisLocal.hasCapital,
+    financialAnalysisLocal.fundingWay,
+    financialAnalysisLocal.averageUnitCost,
+    financialAnalysisLocal.collaboratorCost,
+    financialAnalysisLocal.rentCost,
+    financialAnalysisLocal.otherCost
   ]
 
 console.log(allFormData)

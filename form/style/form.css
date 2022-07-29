@@ -114,6 +114,9 @@ input.invalid {
   background-color: #04AA6D;
 }
 
+.form-input-clue{
+  font-size: 12px;
+}
 
 /* Footer */
 footer {
