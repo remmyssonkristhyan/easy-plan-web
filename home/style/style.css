@@ -2,6 +2,7 @@
 
 html, body {
   font-family: Sintony, Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -12,10 +13,17 @@ a:hover {
   text-decoration: none;
 }
 
+/* Navbar */
+
 .navbar {
   background-color: #0C1142;
   margin-bottom: 0;
   border: 0;
+}
+
+.navbar-brand img {
+  height: 30px;
+  margin-left: 30px;
 }
 
 /* First Section */
