@@ -21,6 +21,28 @@
         margin-bottom: 10px;
     }
     
+    /* Carousels */
+    #carousels {
+        height: auto;
+    }
+
+    #carousels .container {
+        margin: 20px auto 40px auto;
+    }
+
+    .carousel {
+        margin-top: 20px;
+    }
+
+    #whos-for {
+        margin-top: 40px;
+    }
+
+    #carousels .item img {
+        height: 150px;
+        margin: 0 auto;
+      }
+
     /* Learn More Section */
     #learn-more {
         height: auto;
