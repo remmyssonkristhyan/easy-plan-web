@@ -8,6 +8,10 @@ h1 {
   font-weight: bold;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .navbar {
   background-color: #0C1142;
   margin-bottom: 0;
@@ -130,13 +134,46 @@ h1 {
   color: white;
 }
 
-.cards {
-  max-width: 980px;
-  margin: auto auto;
+#learn-more h4 {
+  padding-top: 35px;  
 }
 
-.cards .image img {
+#learn-more .main-content {
+  padding-top: 30px;  
+}
+
+#learn-more h2 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.cards {
+  max-width: 980px;
+  margin: 30px auto;
+}
+
+.card {
+  box-shadow: 5px 5px 15px -4px #000000;
+  transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card .image img {
   width: 100%;
+}
+
+.card .content {
+  height: 90px;
+  padding: 20px;
+  background-color: #FFFFC8;
+}
+
+.card a {
+  color: #0C1142;
+  font-weight: bold;
 }
 
 /* Footer */
