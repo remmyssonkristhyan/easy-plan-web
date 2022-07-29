@@ -35,13 +35,13 @@
           <p> Queremos conhecer você! Aqui você deve colocar as informações básicas relacionadas ao seu empreendimento, definir qual o produto ou serviço que você oferece e qual segmento você atua.</p>
 
           <label> Nome da Empresa (Caso ainda não tenha pensado em um nome, digite: A definir): </label>
-          <p><input id="company-name-input" placeholder="Ex.: Empresa LTDA" oninput="this.className = ''"></p>
+          <p><input id="business-name-input" placeholder="Ex.: Empresa LTDA" oninput="this.className = ''"></p>
 
           <label> Nome do Empreendedor: </label>
           <p><input id="entrepreneur-name-input" placeholder="Ex.: Ciclano Deutrano" oninput="this.className = ''"></p>
 
           <label> CPF ou CNPJ (Apenas números):</label>
-          <p><input id="document-input" type="number" placeholder="Ex.: 00000000000" oninput="this.className = ''"></p>
+          <p><input id="business-document-input" type="number" placeholder="Ex.: 00000000000" oninput="this.className = ''"></p>
 
           <label> Qual é o seu negócio? </label>
           <p><input id="business-description-input" placeholder="Ex.: Fabricação de doces caseiros" oninput="this.className = ''"></p>
@@ -59,7 +59,7 @@
           </p>
 
           <label> Quem é seu consumidor? </label>
-          <p><input id="customer-who-input" placeholder="Ex.: Empresas do setor imobiliário " oninput="this.className = ''"></p>
+          <p><input id="customer-description-input" placeholder="Ex.: Empresas do setor imobiliário " oninput="this.className = ''"></p>
 
           <label> Onde está seu consumidor? </label>
           <p><select id="customer-where-input">
@@ -90,11 +90,11 @@
           </select></p>
 
           <label> Quem são seus principais concorrentes? </label>
-          <p><input id="competitor-who-input" placeholder="Ex.: Empreiteiras da região" oninput="this.className = ''"></p>
+          <p><input id="competitor-description-input" placeholder="Ex.: Empreiteiras da região" oninput="this.className = ''"></p>
 
           <label> Você possui fornecedores? </label>
-            <label class="radio-inline"><input type="radio" name="suppliers-have-input" value="Sim" >Sim</label>
-            <label class="radio-inline"><input type="radio" name="suppliers-have-input" value="Não" checked>Não</label>
+            <label class="radio-inline"><input type="radio" name="has-supplier-input" value="Sim" >Sim</label>
+            <label class="radio-inline"><input type="radio" name="has-supplier-input" value="Não" checked>Não</label>
 
         </div>
         
@@ -122,7 +122,7 @@
           </select></p>
           
           <label> Qual será o preço médio unitário cobrado? </label>
-          <p>R$<input id="unit-price-input" type="number" class="number-currency" value="1.00" step=".01"> por cada produto ou serviço</p>
+          <p>R$<input id="average-unit-price-input" type="number" class="number-currency" value="1.00" step=".01"> por cada produto ou serviço</p>
           
           <label> Qual a previsão de vendas? </label>
           <br>
@@ -146,14 +146,14 @@
           <p>Nessa etapa, você deve determinar o total de recursos a ser investido para que o seu negócio funcione. Estes investimentos correspondem ao custo fixo de todos os bens que você necessita para sua produção ou prestação de serviço. Aqui também devem ser incluídas despesas como aluguel e salário de colaboradores.</p>
 
           <label> Qual o valor do investimento necessário? </label>
-          <p>R$<input id="capital-how-much-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
+          <p>R$<input id="initial-funding-input" type="number" class="number-currency" value="1.00" step=".01"> </p>
 
           <label> Você possui o valor necessário? </label>
-          <label class="radio-inline"><input type="radio" name="need-capital-input" value="Sim" checked>Sim</label>
-          <label class="radio-inline"><input type="radio" name="need-capital-input" value="Não">Não</label>
+          <label class="radio-inline"><input type="radio" name="has-capital-input" value="Sim" checked>Sim</label>
+          <label class="radio-inline"><input type="radio" name="has-capital-input" value="Não">Não</label>
 
-          <label id="how-capital-label" style="display: none"> Como pretende captar esse valor? </label>
-          <select id="how-capital-input" style="display: none">
+          <label id="funding-way-label" style="display: none"> Como pretende captar esse valor? </label>
+          <select id="funding-way-input" style="display: none">
             <option value="Empréstimo bancário<">Empréstimo bancário</option>
             <option value="Empréstimo com familiares">Empréstimo com familiares</option>
             <option value="Venda de bens">Venda de bens</option>
@@ -162,7 +162,7 @@
           </select></p>
 
           <label> Qual o custo unitário médio de seu produto/serviço? (obrigatório)</label>
-          <p>R$<input id="unit-cost-input" type="number" class="number-currency" value="5.00" min="0,01" step=".01"> </p>
+          <p>R$<input id="average-unit-cost-input" type="number" class="number-currency" value="5.00" min="0,01" step=".01"> </p>
 
           <label> Qual o custo com colaboradores? </label>
           <p>R$<input id="collaborator-cost-input" type="number" class="number-currency" value="0.00" min="0,00" step=".01"> </p>

@@ -1,28 +1,28 @@
 // General Info Inputs
-const companyName = document.querySelector('#company-name-input');
+const businessName = document.querySelector('#business-name-input');
 const entrepreneurName = document.querySelector('#entrepreneur-name-input');
-const documentInput = document.querySelector('#document-input');
+const businessDocument = document.querySelector('#business-document-input');
 const businessDescription = document.querySelector('#business-description-input');
 const businessSegment = document.querySelector('#business-segment-input');
 // Market Analysis Inputs
-const customerWho = document.querySelector('#customer-who-input');
+const customerDescription = document.querySelector('#customer-description-input');
 const customerWhere = document.querySelector('#customer-where-input');
 const customerFrequency = document.querySelector('#customer-frequency-input');
 const customerFactor = document.querySelector('#customer-factor-input');
-const competitorWho = document.querySelector('#competitor-who-input');
-const suppliersHave = document.getElementsByName('suppliers-have-input');
+const competitorDescription = document.querySelector('#competitor-description-input');
+const hasSupplier = document.getElementsByName('has-supplier-input');
 //Marketing Plan Inputs
 const productDescription = document.querySelector('#product-description-input');
 const businessDifferential = document.querySelector('#business-differential-input');
 const mainAdvertising = document.querySelector('#main-advertising-input');
-const unitPrice = document.querySelector('#unit-price-input');
+const averageUnitPrice = document.querySelector('#average-unit-price-input');
 const salesPeriod = document.querySelector('#sales-period-input');
 const salesTotal = document.querySelector('#sales-total-input');
 //Financial Analysis Inputs
-const capitalHowMuch = document.querySelector('#capital-how-much-input');
-const capitalNeed = document.getElementsByName('need-capital-input');
-const capitalHow = document.querySelector('#how-capital-input');
-const unitCost = document.querySelector('#unit-cost-input');
+const initialFunding = document.querySelector('#initial-funding-input');
+const hasCapital = document.getElementsByName('has-capital-input');
+const fundingWay = document.querySelector('#funding-way-input');
+const averageUnitCost = document.querySelector('#average-unit-cost-input');
 const collaboratorCost = document.querySelector('#collaborator-cost-input');
 const rentCost = document.querySelector('#rent-cost-input');
 const otherCost = document.querySelector('#other-cost-input');
@@ -48,9 +48,9 @@ function generalInfo() {
 
     //Transformar as informações inseridas em objeto
     generalInfoForm = {
-      "companyName": companyName.value,
+      "businessName": businessName.value,
       "entrepreneurName": entrepreneurName.value,
-      "documentPerson": documentInput.value,
+      "documentPerson": businessDocument.value,
       "businessDescription": businessDescription.value,
       "businessSegment" : businessSegment.value
     }
@@ -67,24 +67,24 @@ function marketAnalysis() {
 
   console.log('Análise de Mercado');
 
-    // Pegar radio selecionado em suppliersHave
-    let suppliersHaveValue = ''
+    // Pegar radio selecionado em hasSupplier
+    let hasSupplierValue = ''
 
-    for (let i = 0; i < suppliersHave.length; i++) {
-      if (suppliersHave[i].checked) {
-        suppliersHaveValue = (suppliersHave[i].value);
+    for (let i = 0; i < hasSupplier.length; i++) {
+      if (hasSupplier[i].checked) {
+        hasSupplierValue = (hasSupplier[i].value);
         break;
       }
     }
 
   //Transformar as informações inseridas em objeto
   marketAnalysisForm = {
-    "customerWho": customerWho.value,
+    "customerDescription": customerDescription.value,
     "customerWhere": customerWhere.value,
     "customerFrequency": customerFrequency.value,
     "customerFactor": customerFactor.value,
-    "competitorWho" : competitorWho.value,
-    "suppliersHave" : suppliersHaveValue
+    "competitorDescription" : competitorDescription.value,
+    "hasSupplier" : hasSupplierValue
   }
   console.log(marketAnalysisForm);
   
@@ -104,7 +104,7 @@ console.log('Plano de Marketing');
       "productDescription": productDescription.value,
       "businessDifferential": businessDifferential.value,
       "mainAdvertising": mainAdvertising.value,
-      "unitPrice": unitPrice.value,
+      "averageUnitPrice": averageUnitPrice.value,
       "salesPeriod": salesPeriod.value,
       "salesTotal" : salesTotal.value
     }
@@ -119,29 +119,29 @@ console.log('Plano de Marketing');
 //SAVE Financial Analysis
 function financialAnalysis() {
 
-  let capitalNeedValue = ''
-  for (let i = 0; i < capitalNeed.length; i++) {
-    if (capitalNeed[i].checked) {
-      capitalNeedValue = (capitalNeed[i].value);
+  let hasCapitalValue = ''
+  for (let i = 0; i < hasCapital.length; i++) {
+    if (hasCapital[i].checked) {
+      hasCapitalValue = (hasCapital[i].value);
       break;
     }
   }
 
-  let capitalHowValue = ''
-  if (capitalNeedValue == 'Sim') {
-    capitalHowValue = 'Reservas'
+  let fundingWayValue = ''
+  if (hasCapitalValue == 'Sim') {
+    fundingWayValue = 'Reservas'
   } else {
-    capitalHowValue = capitalHow.value
+    fundingWayValue = fundingWay.value
   }
     
 console.log('Análise Financeira');
 
     //Transformar as informações inseridas em objeto
     financialAnalysisForm = {
-      "capitalHowMuch": capitalHowMuch.value,
-      "capitalneed": capitalNeedValue,
-      "capitalHow": capitalHowValue,
-      "unitCost": unitCost.value,
+      "initialFunding": initialFunding.value,
+      "hasCapital": hasCapitalValue,
+      "fundingWay": fundingWayValue,
+      "averageUnitCost": averageUnitCost.value,
       "collaboratorCost" : collaboratorCost.value,
       "rentCost" : rentCost.value,
       "otherCost" : otherCost.value
@@ -180,46 +180,3 @@ localStorage.setItem("allData",JSON.stringify(allFormData));
 console.log('Dados enviados');
 
 }
-
-
-
-/* OLD VERSION
-// Ao clicar o botão de salvar...
-nextButton.addEventListener('click', (event) => {
-  event.preventDefault();
-
-  console.log('clicou!')
-
-// Pegar os valores marcados das checkbox
-  let activityList= '';
-  for (let i = 0; i < activityInput.length; i++) {
-    if (activityInput[i].checked) {
-      activityList += `${activityInput[i].value} / `;
-    }
-  }
-  
-  let segmentList= '';
-  for (let i in segmentInput) {
-    if (segmentInput[i].checked) {
-      segmentList += `${segmentInput[i].value} / `;
-    }
-  }
-
-  //Transformar as informações inseridas em objeto
-  generalInfoForm = {
-    "activity": activityList.slice(0, -3),
-    "segment": segmentList.slice(0, -3),
-    "description": descriptionInput.value,
-    "mission": missionInput.value
-  }
-  
-  console.log('Dados enviados')
-  
-  //Armazenar o generalInfoForm no armazenamento local
-  localStorage.setItem("generalInfo",JSON.stringify(generalInfoForm));
-  
-  
-  
-});
-
-*/

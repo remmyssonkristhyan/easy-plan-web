@@ -1,6 +1,6 @@
-const needCapital = document.getElementsByName('need-capital-input');
-const howCapitalLabel = document.querySelector('#how-capital-label');
-const howCapital = document.querySelector('#how-capital-input');
+const CapitalHas = document.getElementsByName('has-capital-input');
+const fundingWayLabel = document.querySelector('#funding-way-label');
+const fundingWayInput = document.querySelector('#funding-way-input');
 const redirectButton = document.querySelector('#redirect-button');
 
 //RedirectToResult
@@ -9,16 +9,16 @@ redirectButton.addEventListener("click", () => {
 });
 
 //HowCapital on/off
-for (const radio of needCapital) {
+for (const radio of CapitalHas) {
   radio.onclick = (current) => {
     console.log(current.target.value)
     console.log('mudou')
     if (current.target.value == 'Não') {
-      howCapitalLabel.style.display = "block"
-      howCapital.style.display = "block"
+      fundingWayLabel.style.display = "block"
+      fundingWay.style.display = "block"
     } else {
-      howCapitalLabel.style.display = "none"
-      howCapital.style.display = "none"
+      fundingWayLabel.style.display = "none"
+      fundingWay.style.display = "none"
     }
   };
 }

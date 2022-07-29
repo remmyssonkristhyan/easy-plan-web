@@ -1,26 +1,26 @@
 //Campos para exibir informações
 //WhoAreCard
-const companyNameValue = document.querySelector('#company-name-value');
+const businessNameValue = document.querySelector('#business-name-value');
 const entrepreneurNameValue = document.querySelector('#entrepreneur-name-value');
-const documentValue = document.querySelector('#document-value');
+const businessDocumentValue = document.querySelector('#business-document-value');
 const businessDescriptionValue = document.querySelector('#business-description-value');
 const businessSegmentValue = document.querySelector('#business-segment-value');
 
 //MarketAnalysisCard
 const customerValue = document.querySelector('#customer-value');
 const competitorValue = document.querySelector('#competitor-value');
-const suppliersValue = document.querySelector('#suppliers-value');
+const supplierValue = document.querySelector('#supplier-value');
 
 //MarketingPlanCArd
 const productValue = document.querySelector('#product-value');
 const businessDifferentialValue = document.querySelector('#business-differential-value');
 const mainAdvertisingValue = document.querySelector('#main-advertising-value');
-const unitPriceValue = document.querySelector('#unit-price-value');
+const averageUnitPriceValue = document.querySelector('#average-unit-price-value');
 const salesValue = document.querySelector('#sales-value');
 
 //FinancialAnalysisCard
-const startingCapitalValue = document.querySelector('#starting-capital-value');
-const unitCostValue = document.querySelector('#unit-cost-value');
+const initialFundingValue = document.querySelector('#initial-funding-value');
+const averageUnitCostValue = document.querySelector('#average-unit-cost-value');
 const collaboratorCostValue = document.querySelector('#collaborator-cost-value');
 const rentCostValue = document.querySelector('#rent-cost-value');
 const otherCostValue = document.querySelector('#other-cost-value');
@@ -55,68 +55,68 @@ let financialAnalysis = JSON.parse(financialAnalysisForm);
 
 //Dados relevantes (usados mais de uma vez)
 //MarketingPlanCard
-const unitPrice = parseFloat(marketingPlan.unitPrice);
+const averageUnitPrice = parseFloat(marketingPlan.averageUnitPrice);
 const salesTotal = parseFloat(marketingPlan.salesTotal);
 
 //FinancialAnalysisCard
-const capitalHowMuch = parseFloat(financialAnalysis.capitalHowMuch);
-const unitCost = parseFloat(financialAnalysis.unitCost);
+const initialFunding = parseFloat(financialAnalysis.initialFunding);
+const averageUnitCost = parseFloat(financialAnalysis.averageUnitCost);
 const collaboratorCost = parseFloat(financialAnalysis.collaboratorCost);
 const rentCost = parseFloat(financialAnalysis.rentCost);
 const otherCost = parseFloat(financialAnalysis.otherCost);
 
 //Manipular respostas
 //MarketAnalysisCard
-let customerMessage = `${marketAnalysis.customerWho}; sendo que eles se encontram em ${marketAnalysis.customerWhere} e ${marketAnalysis.customerFrequency} costumam comprar este tipo de produto/serviço, normalmente levando em consideração ${marketAnalysis.customerFactor}  `
+let customerMessage = `${marketAnalysis.customerDescription}; sendo que eles se encontram em ${marketAnalysis.customerWhere} e ${marketAnalysis.customerFrequency} costumam comprar este tipo de produto/serviço, normalmente levando em consideração ${marketAnalysis.customerFactor}  `
 
 let supplierMessage = ''
-if (marketAnalysis.suppliersHave === "Sim") supplierMessage = 'Já possui fornecedores'
-if (marketAnalysis.suppliersHave === "Não") supplierMessage = 'Ainda não possui fornecedores'
+if (marketAnalysis.hasSupplier === "Sim") supplierMessage = 'Já possui fornecedores'
+if (marketAnalysis.hasSupplier === "Não") supplierMessage = 'Ainda não possui fornecedores'
 
 //MarketingPlanCard
 let salesMessage = `Total de R$ ${salesTotal}  ${marketingPlan.salesPeriod}`
 
 //FinancialAnalysisCard
-let startingCapitalMessage = ''
-if (financialAnalysis.capitalNeed === 'Sim') startingCapitalMessage = `É necessário o investimento de R$ ${capitalHowMuch}, sendo que já possui o investimento necessário`
-if (financialAnalysis.capitalNeed === 'Não') startingCapitalMessage = `É necessário o investimento de R$ ${capitalHowMuch}, sendo que ainda não possui o investimento necessário e provavelmente irá ${financialAnalysis.capitalHow} para obter`
+let initialFundingMessage = ''
+if (financialAnalysis.hasCapital === 'Sim') initialFundingMessage = `É necessário o investimento de R$ ${initialFunding}, sendo que já possui o investimento necessário`
+if (financialAnalysis.hasCapital === 'Não') initialFundingMessage = `É necessário o investimento de R$ ${initialFunding}, sendo que ainda não possui o investimento necessário e provavelmente irá ${financialAnalysis.fundingWay} para obter`
 
 //ResultsReportCard
-const invoicingCalculate = unitPrice * salesTotal;
-const costsCalculate = unitCost + collaboratorCost + rentCost + otherCost;
+const invoicingCalculate = averageUnitPrice * salesTotal;
+const costsCalculate = averageUnitCost + collaboratorCost + rentCost + otherCost;
 const operationalResultCalculate = invoicingCalculate + costsCalculate;
 
 //ViabilityIndicatorsCard
 const contributionMarginCalculate = (invoicingCalculate - costsCalculate) / invoicingCalculate;
 const balancePointCalculate = costsCalculate / contributionMarginCalculate;
 const profitabilityCalculate = operationalResultCalculate / invoicingCalculate;
-const returnCalculate = (operationalResultCalculate / capitalHowMuch) * 100;
-const returnPeriodCalculate = capitalHowMuch / operationalResultCalculate;
+const returnCalculate = (operationalResultCalculate / initialFunding) * 100;
+const returnPeriodCalculate = initialFunding / operationalResultCalculate;
 
 
 //Exibir informações para o usuário
 //WhoAreCard
-companyNameValue.innerHTML = generalInfo.companyName;
+businessNameValue.innerHTML = generalInfo.businessName;
 entrepreneurNameValue.innerHTML = generalInfo.entrepreneurName;
-documentValue.innerHTML = generalInfo.documentPerson;
+businessDocumentValue.innerHTML = generalInfo.businessDocument;
 businessDescriptionValue.innerHTML = generalInfo.businessDescription;
 businessSegmentValue.innerHTML = generalInfo.businessSegment;
 
 //MarketAnalysisCard
 customerValue.innerHTML = customerMessage;
-competitorValue.innerHTML = marketAnalysis.competitorWho;
-suppliersValue.innerHTML = supplierMessage;
+competitorValue.innerHTML = marketAnalysis.competitorDescription;
+supplierValue.innerHTML = supplierMessage;
 
 //MarketingPlanCard
 productValue.innerHTML = marketingPlan.productDescription;
 businessDifferentialValue.innerHTML = marketingPlan.businessDifferential;
 mainAdvertisingValue.innerHTML = marketingPlan.mainAdvertising;
-unitPriceValue.innerHTML = `R$ ${unitPrice}`;
+averageUnitPriceValue.innerHTML = `R$ ${averageUnitPrice}`;
 salesValue.innerHTML = salesMessage;
 
 //FinancialAnalysisCard
-startingCapitalValue.innerHTML = startingCapitalMessage;
-unitCostValue.innerHTML = `R$ ${unitCost}`;
+initialFundingValue.innerHTML = initialFundingMessage;
+averageUnitCostValue.innerHTML = `R$ ${averageUnitCost}`;
 collaboratorCostValue.innerHTML = `R$ ${collaboratorCost}`;
 rentCostValue.innerHTML = `R$ ${rentCost}`;
 otherCostValue.innerHTML = `R$ ${otherCost}`;
