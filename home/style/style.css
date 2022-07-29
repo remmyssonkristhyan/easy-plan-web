@@ -25,10 +25,43 @@ a:hover {
   background-color: #0C1142;
 }
 
+#first-section .container{
+  margin: 0 auto;
+}
+
 #presentation-content {
   color: white;
   padding-top: 80px;
-  padding-left: 40px;
+  padding-left: 0px;
+}
+
+#presentation-paragraph {
+  padding-top: 20px;
+}
+
+#presentation-content button {
+  margin-top: 40px;
+  width: 150px;
+  height: 40px;
+  color: #0C1142;
+  font-weight: bold; 
+  letter-spacing: 1px;
+  background-color: #ffffc800;
+  border: 2px solid #ffffc8;
+  color: #ffffc8;
+  border-radius: 5px;
+  transition: .8s ease;
+  transition-property: background-color, color, letter-spacing;
+}
+
+#presentation-content button:hover {
+  background-color: #ffffc8;
+  color: #0C1142;
+  letter-spacing: 1.2px;
+}
+
+.main-image figure {
+  margin: 0 auto;
 }
 
 .main-image img {
