@@ -76,6 +76,7 @@ a:hover {
   width: 80%;
   border-radius: 15px;
   padding-top: 80px;
+  margin: auto auto;
 }
 
 /* Cenario Section */
@@ -168,7 +169,7 @@ a:hover {
   margin-top: 80px;
 }
 
-.carousel-title h3{
+.carousel-title h3 {
   color: #0C1142;
   font-weight: bold;
 }
@@ -209,7 +210,6 @@ a:hover {
 }
 
 .card {
-  box-shadow: 5px 5px 15px -4px #000000;
   transition: all 0.3s ease 0s;
 }
 

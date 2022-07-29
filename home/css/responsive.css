@@ -1,12 +1,21 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1000px) {
     
     /* First Section */
+    #first-section {
+        height: auto;
+    }
+
     #presentation-content h1 {
         font-size: 30px;
     }
     
+    .main-image img {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+    
     /* Cenario Section */
-    .box-cenario-info {
+    #cenario {
         height: auto;
     }
 
@@ -21,8 +30,58 @@
         margin-bottom: 10px;
     }
     
+    /* Carousels */
+    #carousels {
+        height: auto;
+    }
+
+    #carousels .container {
+        margin: 20px auto 40px auto;
+    }
+
+    .carousel {
+        margin-top: 20px;
+    }
+
+    #whos-for {
+        margin-top: 40px;
+    }
+
+    #carousels .item img {
+        height: 150px;
+        margin: 0 auto;
+      }
+
     /* Learn More Section */
     #learn-more {
         height: auto;
+    }
+    .card {
+        margin: 10px auto;
+      }
+}
+
+@media screen and (max-width: 1200px) {
+
+    /* Cenario Section */
+    .box-cenario-info {
+        height: 200px;
+    }
+
+    .title-box-cenario h2 {
+        font-size: 30px;
+    }
+
+    .text-box-cenario p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    /* Cenario Section */
+    .cenario-info {
+        padding-top: 30px;
+        margin-bottom: 30px;
     }
 }
